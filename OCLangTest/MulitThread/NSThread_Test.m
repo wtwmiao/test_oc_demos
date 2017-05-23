@@ -54,6 +54,9 @@
 
 // 第二种方式创建线程,并且配置线程.
 -(void)startTest_2{
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(threadExitNotice) name:NSThreadWillExitNotification object:nil];
+    
     _totalCount = 20;
     _thread = [[NSThread alloc]initWithTarget:self selector:@selector(thread_1)  object:nil];
     [_thread start];
@@ -80,6 +83,13 @@
     NSRunLoop  *runLoop = [NSRunLoop currentRunLoop];
     [runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1.0]]; //自定义运行时间
 
+}
+
+-(boolean_t)threadExitNotice{
+    NSLog(@" get thread exit notificaion");
+    
+    return YES;
+    
 }
 
 
