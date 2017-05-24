@@ -9,6 +9,10 @@
 #import "ViewController.h"
 #import "Pthread.h"
 #import "NSThread_Test.h"
+#import "BlockTest.h"
+#import "UIButton+Hook.h"
+#import "NSOperation_Test.h"
+#import "GCDTest.h"
 
 @interface ViewController ()
 
@@ -24,9 +28,28 @@
 //    [pth startThread];
 //    [pth endThread];
     
-    NSThread_Test *nstest = [NSThread_Test new];
-    [nstest startTest_2];
+   NSThread_Test *nstest = [NSThread_Test new];
+//   [nstest startTest_block];
     
+    BlockTest  *bTest = [[BlockTest alloc ]init];
+   // [bTest startTest];
+//    
+//    UIButton  *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 200)];
+//    btn.backgroundColor=[UIColor grayColor];
+//    [btn setTitle:@"hook" forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchDown];
+//    [self.view addSubview:btn];
+    
+    //NSOperation_Test *opTest  = [[NSOperation_Test alloc]init];
+ //   [opTest startWithNoNeedOperation];
+    
+    GCDTest  *gcdTest  = [[GCDTest alloc]init];
+    [gcdTest testDispathGroup];
+    
+}
+
+-(void)onClick{
+    NSLog(@" clicked");
 }
 
 

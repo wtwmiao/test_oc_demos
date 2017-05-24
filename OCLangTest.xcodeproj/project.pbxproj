@@ -15,6 +15,10 @@
 		756967D41ED41C4F0032CC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756967D21ED41C4F0032CC85 /* LaunchScreen.storyboard */; };
 		756967E41ED425240032CC85 /* Pthread.m in Sources */ = {isa = PBXBuildFile; fileRef = 756967E31ED425240032CC85 /* Pthread.m */; };
 		756967E91ED427660032CC85 /* NSThread_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 756967E81ED427660032CC85 /* NSThread_Test.m */; };
+		756967ED1ED527190032CC85 /* BlockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 756967EC1ED527190032CC85 /* BlockTest.m */; };
+		75F235321ED54F7200380293 /* UIButton+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F235311ED54F7200380293 /* UIButton+Hook.m */; };
+		75F235351ED5664A00380293 /* NSOperation_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F235341ED5664A00380293 /* NSOperation_Test.m */; };
+		75F235381ED5777500380293 /* GCDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F235371ED5777500380293 /* GCDTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,14 @@
 		756967E31ED425240032CC85 /* Pthread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pthread.m; path = MulitThread/Pthread.m; sourceTree = "<group>"; };
 		756967E71ED427660032CC85 /* NSThread_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSThread_Test.h; path = MulitThread/NSThread_Test.h; sourceTree = "<group>"; };
 		756967E81ED427660032CC85 /* NSThread_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSThread_Test.m; path = MulitThread/NSThread_Test.m; sourceTree = "<group>"; };
+		756967EB1ED527190032CC85 /* BlockTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockTest.h; path = BlockTest/BlockTest.h; sourceTree = "<group>"; };
+		756967EC1ED527190032CC85 /* BlockTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlockTest.m; path = BlockTest/BlockTest.m; sourceTree = "<group>"; };
+		75F235301ED54F7200380293 /* UIButton+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Hook.h"; path = "MethodSwizz/UIButton+Hook.h"; sourceTree = "<group>"; };
+		75F235311ED54F7200380293 /* UIButton+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Hook.m"; path = "MethodSwizz/UIButton+Hook.m"; sourceTree = "<group>"; };
+		75F235331ED5664A00380293 /* NSOperation_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSOperation_Test.h; path = MulitThread/NSOperation_Test.h; sourceTree = "<group>"; };
+		75F235341ED5664A00380293 /* NSOperation_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSOperation_Test.m; path = MulitThread/NSOperation_Test.m; sourceTree = "<group>"; };
+		75F235361ED5777500380293 /* GCDTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDTest.h; path = MulitThread/GCDTest.h; sourceTree = "<group>"; };
+		75F235371ED5777500380293 /* GCDTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDTest.m; path = MulitThread/GCDTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,8 @@
 		756967C31ED41C4F0032CC85 /* OCLangTest */ = {
 			isa = PBXGroup;
 			children = (
+				75F2352F1ED54E7E00380293 /* MethodSwizz */,
+				756967EA1ED526F70032CC85 /* BlockTest */,
 				756967DB1ED41D130032CC85 /* MulitThread */,
 				756967C71ED41C4F0032CC85 /* AppDelegate.h */,
 				756967C81ED41C4F0032CC85 /* AppDelegate.m */,
@@ -93,8 +107,30 @@
 				756967E31ED425240032CC85 /* Pthread.m */,
 				756967E71ED427660032CC85 /* NSThread_Test.h */,
 				756967E81ED427660032CC85 /* NSThread_Test.m */,
+				75F235331ED5664A00380293 /* NSOperation_Test.h */,
+				75F235341ED5664A00380293 /* NSOperation_Test.m */,
+				75F235361ED5777500380293 /* GCDTest.h */,
+				75F235371ED5777500380293 /* GCDTest.m */,
 			);
 			name = MulitThread;
+			sourceTree = "<group>";
+		};
+		756967EA1ED526F70032CC85 /* BlockTest */ = {
+			isa = PBXGroup;
+			children = (
+				756967EB1ED527190032CC85 /* BlockTest.h */,
+				756967EC1ED527190032CC85 /* BlockTest.m */,
+			);
+			name = BlockTest;
+			sourceTree = "<group>";
+		};
+		75F2352F1ED54E7E00380293 /* MethodSwizz */ = {
+			isa = PBXGroup;
+			children = (
+				75F235301ED54F7200380293 /* UIButton+Hook.h */,
+				75F235311ED54F7200380293 /* UIButton+Hook.m */,
+			);
+			name = MethodSwizz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +207,11 @@
 				756967E41ED425240032CC85 /* Pthread.m in Sources */,
 				756967CC1ED41C4F0032CC85 /* ViewController.m in Sources */,
 				756967C91ED41C4F0032CC85 /* AppDelegate.m in Sources */,
+				756967ED1ED527190032CC85 /* BlockTest.m in Sources */,
 				756967C61ED41C4F0032CC85 /* main.m in Sources */,
+				75F235321ED54F7200380293 /* UIButton+Hook.m in Sources */,
+				75F235381ED5777500380293 /* GCDTest.m in Sources */,
+				75F235351ED5664A00380293 /* NSOperation_Test.m in Sources */,
 				756967E91ED427660032CC85 /* NSThread_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +371,7 @@
 				756967DA1ED41C4F0032CC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

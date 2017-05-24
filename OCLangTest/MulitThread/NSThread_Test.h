@@ -11,6 +11,7 @@
 @interface NSThread_Test : NSObject
 
 
+-(void) startTest_block;
 
 -(void) startTest;
 

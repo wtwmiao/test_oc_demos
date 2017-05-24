@@ -31,15 +31,45 @@
  iOS实现线程加锁有NSLock和@synchronized两种方式
  */
 
+
+/*
+  NSThread 是对phtread封装.
+ 
+*/
+
 @implementation NSThread_Test{
-    
     NSThread  *_thread;
-     NSThread  *_thread2;
+    NSThread  *_thread2;
     
     NSInteger _totalCount ;
+    NSLock    *_lock;
 }
 
 
+-(instancetype)init{
+    self = [super init];
+    if(self){
+        
+        _lock = [[NSLock alloc]init];
+    }
+    return self;
+}
+
+
+-(void) startTest_block{
+    
+    _totalCount = 20;
+    _thread = [[NSThread alloc]initWithBlock:^{
+        NSLog(@" enter block thread1 = %@ mainthread = %@",[NSThread currentThread],[NSThread mainThread]);
+     
+    }];
+    [_thread start];
+    
+    _thread2 = [[NSThread alloc] initWithBlock:^{
+          NSLog(@" enter block thread2 = %@ mainthread = %@",[NSThread currentThread],[NSThread mainThread]);
+    }];
+    [_thread2 start];
+}
 
 //创建线程方式1
 -(void) startTest{
@@ -126,5 +156,33 @@
 
 }
 
+
+-(void) thread_fun_nslock{
+    NSLog(@"enter thread  %@ class  = %@",[NSThread currentThread],NSStringFromClass([self class]));
+    
+    while (YES) {
+        [_lock lock];
+        {
+            if(_totalCount >0){
+                _totalCount --;
+                NSLog(@"cur cout = %ld",_totalCount);
+                [NSThread sleepForTimeInterval:0.3];
+            }else {
+                
+                if ([NSThread currentThread].isCancelled) {
+                    break;
+                }else {
+                    [[NSThread currentThread] cancel];
+                    CFRunLoopStop(CFRunLoopGetCurrent());
+                }
+                
+                
+                NSLog(@"exit thread = %@ name = %@",[NSThread currentThread] ,[[NSThread currentThread] name]);
+            }
+        }
+        [_lock unlock];
+    }
+   
+}
 
 @end
